@@ -1,4 +1,4 @@
-.dice {
+.flower {
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -9,9 +9,4 @@
     padding: 8px 10px;
     margin-bottom: 10px;
     width: 20%;
-}
-
-img {
-    height: 50px;
-    width: auto;
 }

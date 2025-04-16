@@ -12,6 +12,11 @@
 }
 
 .flower-img {
-    height: 70px;
+    height: 60px;
+    width: auto;
+}
+
+.petal-img {
+    height: 30px;
     width: auto;
 }

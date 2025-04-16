@@ -20,6 +20,7 @@ function Coin() {
             <img
                 src={coinImages[coinValue - 1]}
                 alt={"Metamais bitcoin " + coinValue}
+                className="coin-img"
             />
             <br />
             <button onClick={flipCoin}>Mest</button>

@@ -25,7 +25,7 @@ function Dice() {
                 src={diceImages[diceValue - 1]}
                 alt={"Metamais kauliņš " + diceValue}
             />
-            <br></br>
+            <br />
             <button onClick={rollDice}>Mest</button>
             <p>Jūs uzmetāt <strong>{diceValue}</strong></p>
         </article>

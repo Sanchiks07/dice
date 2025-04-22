@@ -5,6 +5,7 @@ import coin1 from "./assets/coin/happy-bitcoin.svg";
 import coin2 from "./assets/coin/heart-bitcoin.svg";
 
 const coinImages = [coin1, coin2];
+const coinTexts = ["Happy Aleks", "I Love Bitcoin"];
 
 function Coin() {
     const [coinValue, setCoinValue] = useState(1);
@@ -24,6 +25,7 @@ function Coin() {
             />
             <br />
             <button onClick={flipCoin}>Mest</button>
+            <p>Jūs uzmetāt <strong>{coinTexts[coinValue - 1]}</strong></p>
         </article>
     ) 
 }

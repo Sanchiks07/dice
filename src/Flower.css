@@ -9,14 +9,27 @@
     padding: 8px 10px;
     margin-bottom: 10px;
     width: 15%;
+    position: relative;
+}
+
+.flower-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
 }
 
 .flower-img {
     height: 60px;
     width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .petal-img {
     height: 30px;
     width: auto;
+    z-index: 1;
 }

@@ -10,7 +10,7 @@ function Flower() {
     const [message, setMessage] = useState("");
 
     function generatePetal() {
-        const randomCount = Math.floor(Math.random() * 6) + 1;
+        const randomCount = Math.floor(Math.random() * 8) + 1;
         setPetalCount(randomCount);
         setPluckedCount(0);
         setMessage("");
@@ -19,11 +19,11 @@ function Flower() {
     function pluckPetal() {
         if (petalCount > 0) {
             const nextPlucked = pluckedCount + 1;
-            const nextPetalCount = petalCount - 1;
+            const newPetalCount = petalCount - 1;
             const result = nextPlucked % 2 === 1 ? "mīl" : "nemīl";
 
             setPluckedCount(nextPlucked);
-            setPetalCount(nextPetalCount);
+            setPetalCount(newPetalCount);
             setMessage(result);
         }
     }
@@ -31,16 +31,32 @@ function Flower() {
     return (
         <article className="flower">
             <h2>Mīlestības puķe</h2>
-            <img className="flower-img" src={flower} alt="Mīlestības puķe" />
-            
-            <div>
-                {[...Array(petalCount)].map((_, index) => (
-                    <img
-                        key={index}
-                        src={petal}
-                        alt={`Ziedlapiņa ${index + 1}`}
-                    />
-                ))}
+
+            <div className="flower-container">
+                <img className="flower-img" src={flower} alt="Mīlestības puķe" />
+
+                {[...Array(petalCount)].map((_, index) => {
+                    const angle = (360 / petalCount) * index;
+                    const radius = 40; // attālums no centra
+                    const x = radius * Math.cos((angle * Math.PI) / 180);
+                    const y = radius * Math.sin((angle * Math.PI) / 180);
+
+                    return (
+                        <img
+                            key={index}
+                            src={petal}
+                            alt={`Ziedlapiņa ${index + 1}`}
+                            className="petal-img"
+                            style={{
+                                position: "absolute",
+                                top: `calc(50% + ${y}px)`,
+                                left: `calc(50% + ${x}px)`,
+                                transform: `translate(-50%, -50%) rotate(${angle + 90}deg)`,
+                                transformOrigin: "center center",
+                            }}                            
+                        />
+                    );
+                })}
             </div>
 
             <br />

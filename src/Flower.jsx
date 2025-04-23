@@ -5,7 +5,7 @@ import flower from "./assets/flower/flower.svg";
 import petal from "./assets/flower/petal.svg";
 
 function Flower() {
-    const [petalCount, setPetalCount] = useState(6);
+    const [petalCount, setPetalCount] = useState(0);
     const [pluckedCount, setPluckedCount] = useState(0);
     const [message, setMessage] = useState("");
 
